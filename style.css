@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 20px;
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  max-width: 100%;
+  min-height: 600px;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* FORMS */
+
+.form-box {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  transition: 0.6s ease-in-out;
+  background: #fff;
+}
+
+.login {
+  left: 0;
+  z-index: 2;
+}
+
+.signup {
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.container.active .login {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.container.active .signup {
+  transform: translateX(100%);
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+form {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* INPUTS */
+
+.input-box {
+  position: relative;
+  margin: 18px 0;
+}
+
+.input-box i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2563eb;
+  font-size: 18px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 55px;
+  border: 2px solid #dbe2ef;
+  border-radius: 12px;
+  padding-left: 50px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #2563eb;
+}
+
+/* ERROR */
+
+.error {
+  display: block;
+  min-height: 20px;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* REMEMBER */
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 25px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember-forgot a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* BUTTON */
+
+.btn {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+.social-text {
+  text-align: center;
+  margin: 25px 0;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #2563eb;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.toggle-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  overflow: hidden;
+  transition: 0.6s ease-in-out;
+  border-radius: 150px 0 0 150px;
+  z-index: 100;
+}
+
+.container.active .toggle-box {
+  left: 0;
+  border-radius: 0 150px 150px 0;
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+}
+
+.toggle-left {
+  left: -100%;
+}
+
+.toggle-right {
+  left: 0;
+}
+
+.container.active .toggle-left {
+  left: 0;
+}
+
+.container.active .toggle-right {
+  left: 100%;
+}
+
+.toggle-panel h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.toggle-panel p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 320px;
+  margin-bottom: 25px;
+}
+
+.toggle-btn {
+  padding: 12px 35px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background: #fff;
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 750px;
+  }
+
+  .form-box {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+  }
+
+  .login,
+  .signup {
+    width: 100%;
+  }
+
+  .container.active .login {
+    display: none;
+  }
+
+  .container.active .signup {
+    display: flex;
+    transform: none;
+  }
+
+  .toggle-box {
+    display: none;
+  }
+}
